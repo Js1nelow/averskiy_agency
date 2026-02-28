@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Услуги и Тарифы | AVERSKIY AGENCY</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Локальные правки для чистого дизайна без полос */
+        .pricing-header { text-align: center; margin: 80px 0 100px; }
+        .pricing-header h1 { font-size: 4rem; font-weight: 900; text-transform: uppercase; letter-spacing: -1.5px; margin-bottom: 20px; }
+        
+        /* Чистые заголовки разделов без черных полос */
+        .section-title-clean { 
+            font-size: 2.5rem; 
+            font-weight: 900; 
+            text-transform: uppercase; 
+            letter-spacing: 1px; 
+            margin-bottom: 60px; 
+            text-align: center;
+            color: #fff;
+        }
+
+        /* Стили для цен внутри зигзага */
+        .price-list-inline { margin: 20px 0; }
+        .price-list-inline div { margin-bottom: 10px; font-size: 1.1rem; }
+        .price-list-inline strong { color: #fff; font-size: 1.3rem; }
+
+        /* Сетка для второго раздела */
+        .pricing-grid { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 20px; 
+            margin-top: 40px;
+        }
+
+        .pack-card { 
+            padding: 40px 30px; 
+            border-radius: 24px; 
+            display: flex; 
+            flex-direction: column; 
+            height: 100%;
+            transition: transform 0.3s ease;
+        }
+        .pack-card:hover { transform: translateY(-10px); }
+
+        .popular { 
+            border: 1px solid rgba(255, 255, 255, 0.4) !important; 
+            background: rgba(255,255,255,0.06) !important;
+            position: relative;
+        }
+        .popular::before {
+            content: 'ПОПУЛЯРНОЕ';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #fff;
+            color: #000;
+            padding: 5px 20px;
+            font-size: 0.7rem;
+            font-weight: 900;
+            border-radius: 20px;
+        }
+
+        .cta-footer { 
+            text-align: center; 
+            padding: 100px 40px; 
+            margin-top: 100px; 
+            border-radius: 30px;
+        }
+        .btn-tg { 
+            display: inline-block; 
+            background: #fff; 
+            color: #000; 
+            padding: 20px 50px; 
+            border-radius: 50px; 
+            font-weight: 800; 
+            text-transform: uppercase; 
+            text-decoration: none; 
+            margin-top: 30px;
+            transition: 0.3s;
+        }
+        .btn-tg:hover { transform: scale(1.05); box-shadow: 0 10px 30px rgba(255,255,255,0.2); }
+
+        @media (max-width: 900px) {
+            .pricing-grid { grid-template-columns: 1fr; }
+            .service-row, .service-row.reverse { flex-direction: column; gap: 40px; }
+            .service-img-box { width: 100%; height: 350px; }
+            .pricing-header h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <header class="glass-panel">
+        <a href="index.html" class="logo">AVERSKIY AGENCY</a>
+        <nav class="main-nav">
+            <a href="portfolio.html">КЕЙСЫ</a>
+            <a href="pricing.html" class="active">УСЛУГИ</a>
+            <a href="tech.html">ТЕХНОЛОГИИ</a>
+            <a href="https://t.me/andrewaverskiy" target="_blank">КОНТАКТЫ</a>
+        </nav>
+        </header>
+
+    <main>
+        <div class="pricing-header">
+            <h1>Стоимость решений</h1>
+            <p class="muted-text">Прозрачное ценообразование без скрытых платежей и переплат за продакшн.</p>
+        </div>
+
+        <!-- РАЗДЕЛ 1: ТОЧЕЧНЫЕ РЕШЕНИЯ (ЗИГЗАГ) -->
+        <h2 class="section-title-clean">Точечные решения</h2>
+
+        <!-- Предметка -->
+        <div class="service-row fade-in">
+            <div class="service-text glass-panel">
+                <h3 class="service-title">Предметная съемка с переносом товара</h3>
+                <p class="muted-text">Идеально для карточек товара и каталогов. Переносим ваш товар в любую цифровую среду.</p>
+                <div class="price-list-inline">
+                    <div>1 фото — <strong>2 000 ₽</strong> (от 4 шт)</div>
+                    <div>5 фото — <strong>8 000 ₽</strong></div>
+                    <div>От 10 фото — <strong>1 500 ₽ / шт</strong></div>
+                </div>
+                <ul class="service-list">
+                    <li>Работа строго по вашему ТЗ и референсам;</li>
+                    <li>1 раунд правок включен;</li>
+                    <li>Высокое разрешение для печати и веба.</li>
+                </ul>
+                <p class="service-meta">Сроки: 3–10 дней</p>
+            </div>
+            <div class="service-img-box">
+                <img src="img/bag_full.jpg" alt="Предметная съемка">
+            </div>
+        </div>
+
+        <!-- Модели -->
+        <div class="service-row reverse fade-in">
+            <div class="service-text glass-panel">
+                <h3 class="service-title">Съемка с переносом товара на модели</h3>
+                <p class="muted-text">Ваша одежда, обувь или аксессуары на идеальных AI-моделях в любой точке мира.</p>
+                <div class="price-list-inline">
+                    <div>1 фото — <strong>2 500 ₽</strong> (от 4 шт)</div>
+                    <div>5 фото — <strong>10 000 ₽</strong></div>
+                    <div>От 10 фото — <strong>2 000 ₽ / шт</strong></div>
+                </div>
+                <ul class="service-list">
+                    <li>Любые типажи моделей и локации;</li>
+                    <li>Сохранение текстуры и кроя изделия;</li>
+                    <li>1 раунд правок.</li>
+                </ul>
+                <p class="service-meta">Сроки: 3–10 дней</p>
+            </div>
+            <div class="service-img-box">
+                <img src="img/coat_full.jpg" alt="Модельная съемка">
+            </div>
+        </div>
+
+        <!-- Видео -->
+        <div class="service-row fade-in">
+            <div class="service-text glass-panel">
+                <h3 class="service-title">ИИ-видео</h3>
+                <p class="muted-text">Динамичный контент, который притягивает внимание в ленте.</p>
+                <div class="price-list-inline">
+                    <div>5-7 кадров (10-15 сек) — <strong>от 20 000 ₽</strong></div>
+                    <div>10-15 кадров (30-40 сек) — <strong>от 35 000 ₽</strong></div>
+                </div>
+                <ul class="service-list">
+                    <li>Полный цикл: Бриф, концепция, мудборд;</li>
+                    <li>Генерация, анимация (оживление), монтаж;</li>
+                    <li>Профессиональный саунд-дизайн и звук;</li>
+                    <li>1 раунд правок.</li>
+                </ul>
+                <p class="service-meta">Сроки: 7–15 дней</p>
+            </div>
+            <div class="service-img-box">
+                <video src="img/video_promo.mp4" controls playsinline poster="video_poster.jpg"></video>
+            </div>
+        </div>
+
+        <!-- РАЗДЕЛ 2: КОМПЛЕКСНЫЕ КАМПЕЙНЫ (СЕТКА) -->
+        <h2 class="section-title-clean" style="margin-top: 120px;">Комплексные кампании</h2>
+
+        <div class="pricing-grid">
+            <!-- Базовый Дроп -->
+            <div class="pack-card glass-panel fade-in">
+                <h3 class="service-title">Базовый Дроп</h3>
+                <div class="price-block" style="margin-bottom: 20px;">
+                    <span style="font-size: 2rem; font-weight: 900; color: #fff;">от 15 000 ₽</span>
+                </div>
+                <p class="muted-text" style="font-size: 0.9rem; margin-bottom: 20px;">Идеально для небольших релизов и теста ниши.</p>
+                <ul class="service-list" style="flex-grow: 1;">
+                    <li>До 10 премиальных генераций;</li>
+                    <li>Микс: предметка + модели;</li>
+                    <li>Базовая ретушь и цветокоррекция;</li>
+                    <li>1 раунд правок.</li>
+                </ul>
+                <p class="service-meta" style="margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">Сроки: 3–5 дней</p>
+            </div>
+
+            <!-- Кампейн -->
+            <div class="pack-card glass-panel popular fade-in">
+                <h3 class="service-title">Кампейн</h3>
+                <div class="price-block" style="margin-bottom: 20px;">
+                    <span style="font-size: 2rem; font-weight: 900; color: #fff;">от 35 000 ₽</span>
+                </div>
+                <p class="muted-text" style="font-size: 0.9rem; margin-bottom: 20px;">Полноценный лукбук вашей коллекции.</p>
+                <ul class="service-list" style="flex-grow: 1;">
+                    <li>До 25 премиум фото-генераций;</li>
+                    <li>Короткий ИИ-видео тизер (до 10 сек);</li>
+                    <li>Профессиональный Upscale и ретушь;</li>
+                    <li>2 раунда правок.</li>
+                </ul>
+                <p class="service-meta" style="margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">Сроки: 7–10 дней</p>
+            </div>
+
+            <!-- Бренд под ключ -->
+            <div class="pack-card glass-panel fade-in">
+                <h3 class="service-title">Бренд под ключ</h3>
+                <div class="price-block" style="margin-bottom: 20px;">
+                    <span style="font-size: 2rem; font-weight: 900; color: #fff;">от 60 000 ₽</span>
+                </div>
+                <p class="muted-text" style="font-size: 0.9rem; margin-bottom: 20px;">Масштабный визуал для захвата рынка.</p>
+                <ul class="service-list" style="flex-grow: 1;">
+                    <li>От 30 эксклюзивных фото-генераций;</li>
+                    <li>Полноценное ИИ-видео (30-40 сек) со звуком;</li>
+                    <li>Приоритетная поддержка и связь;</li>
+                    <li>Индивидуальный арт-дирекшн.</li>
+                </ul>
+                <p class="service-meta" style="margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">Сроки: 10–15 дней</p>
+            </div>
+        </div>
+
+        <!-- ФУТЕР ИЗ СКРИНШОТА -->
+    </main>
+    <footer id="contact" class="glass-panel fade-in mt-100">
+        <h2>Обсудим ваш проект?</h2>
+        <p class="desc">Свяжитесь со мной напрямую для получения персонального технологического решения.</p>
+        <div class="socials">
+            <a href="https://t.me/andrewaverskiy" target="_blank">Telegram</a> / <a href="https://www.instagram.com/andrewaverskiy" target="_blank">Instagram</a>
+        </div>
+        <div class="legal-links">
+            <a href="javascript:void(0)" id="openOffer">ПУБЛИЧНАЯ ОФЕРТА</a>
+            <a href="javascript:void(0)" id="openTerms">ПОЛЬЗОВАТЕЛЬСКОЕ СОГЛАШЕНИЕ</a>
+        </div>
+        <p class="copyright">© 2026 AVERSKIY AGENCY. ВСЕ ПРАВА ЗАЩИЩЕНЫ.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        });
+    </script>
+
+<!-- ======================================================= -->
+<!-- ЮРИДИЧЕСКИЙ БЛОК: МОДАЛЬНЫЕ ОКНА AVERSKIY AGENCY -->
+<!-- ======================================================= -->
+
+<style>
+    /* СТИЛИ МОДАЛЬНЫХ ОКОН */
+    .legal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.85);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.4s ease;
+    }
+
+    .legal-overlay.active {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .legal-modal {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(25px);
+        width: 90%;
+        max-width: 850px;
+        max-height: 85vh;
+        border-radius: 32px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        transform: translateY(30px);
+        transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+
+    .legal-overlay.active .legal-modal {
+        transform: translateY(0);
+    }
+
+    .legal-header {
+        padding: 40px 50px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .legal-header h2 {
+        font-family: 'Inter', sans-serif;
+        font-size: 1.8rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #fff;
+        margin: 0;
+    }
+
+    .close-legal-modal {
+        font-size: 40px;
+        color: rgba(255, 255, 255, 0.4);
+        cursor: pointer;
+        line-height: 1;
+        transition: color 0.3s;
+    }
+
+    .close-legal-modal:hover {
+        color: #fff;
+    }
+
+    .legal-body {
+        padding: 0 50px 50px;
+        overflow-y: auto;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    /* Кастомизация скроллбара */
+    .legal-body::-webkit-scrollbar { width: 4px; }
+    .legal-body::-webkit-scrollbar-track { background: transparent; }
+    .legal-body::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.1); border-radius: 10px; }
+
+    .legal-body h3 { color: #fff; margin: 30px 0 15px; font-size: 1.2rem; font-weight: 700; }
+    .legal-body p { margin-bottom: 15px; }
+    .legal-body ul { margin-bottom: 20px; padding-left: 20px; }
+    .legal-body li { margin-bottom: 8px; list-style: disc; }
+
+    /* Обновление ссылок в футере, чтобы они выглядели как кнопки */
+    .legal-links a {
+        cursor: pointer;
+        transition: 0.3s;
+    }
+</style>
+
+<!-- МОДАЛКА 1: ПУБЛИЧНАЯ ОФЕРТА -->
+<div class="legal-overlay" id="modal-offer">
+    <div class="legal-modal">
+        <div class="legal-header">
+            <h2>Публичная оферта</h2>
+            <span class="close-legal-modal">&times;</span>
+        </div>
+        <div class="legal-body">
+            <p>Настоящий документ является официальным предложением (Публичной офертой) агентства <strong>AVERSKIY AGENCY</strong> (далее — Исполнитель) по оказанию услуг генерации визуального контента на базе технологий Искусственного Интеллекта.</p>
+            
+            <h3>1. ПРЕДМЕТ СОГЛАШЕНИЯ</h3>
+            <p>Исполнитель обязуется оказать услуги по созданию цифровых изображений и/или видеороликов в соответствии с Техническим Заданием (ТЗ) Заказчика, а Заказчик обязуется оплатить эти услуги.</p>
+
+            <h3>2. УСЛОВИЯ ОПЛАТЫ И ВОЗВРАТА</h3>
+            <ul>
+                <li>Услуги оказываются на условиях 100% предварительной оплаты.</li>
+                <li>Ввиду специфики использования вычислительных мощностей и затрат токенов нейросетей, денежные средства становятся <strong>безвозвратными</strong> сразу после начала процесса генерации (стадия «Render»).</li>
+                <li>Отказ от услуг после начала работы не влечет за собой возврат оплаты.</li>
+            </ul>
+
+            <h3>3. ОСОБЕННОСТИ ТЕХНОЛОГИИ</h3>
+            <p>Заказчик осознает, что ИИ-генерация является вероятностным процессом. Возможные визуальные артефакты (неточности анатомии, искажения мелких деталей) признаются допустимыми и устраняются Исполнителем строго в рамках оговоренных раундов правок.</p>
+
+            <h3>4. ИНТЕЛЛЕКТУАЛЬНЫЕ ПРАВА</h3>
+            <p>Исключительные права на использование финальных материалов переходят к Заказчику в полном объеме только <strong>после 100% оплаты</strong> оказанных услуг. Исполнитель сохраняет право на размещение работ в своем портфолио.</p>
+        </div>
+    </div>
+</div>
+
+<!-- МОДАЛКА 2: ПОЛЬЗОВАТЕЛЬСКОЕ СОГЛАШЕНИЕ -->
+<div class="legal-overlay" id="modal-terms">
+    <div class="legal-modal">
+        <div class="legal-header">
+            <h2>Правила агентства</h2>
+            <span class="close-legal-modal">&times;</span>
+        </div>
+        <div class="legal-body">
+            <h3>1. ОБЩИЕ ПОЛОЖЕНИЯ</h3>
+            <p>Сайт AVERSKIY AGENCY является витриной услуг и портфолио. Используя ресурс, вы подтверждаете свое согласие с данными правилами.</p>
+
+            <h3>2. СБОР И ХРАНЕНИЕ ДАННЫХ</h3>
+            <p>Мы придерживаемся политики минимального сбора данных:</p>
+            <ul>
+                <li>Мы собираем только те данные, которые вы предоставляете добровольно (имя, ниша бренда, контакт в Telegram/WhatsApp).</li>
+                <li>Персональные данные используются исключительно для связи по вашему проекту и подготовки коммерческого предложения.</li>
+                <li>Мы гарантируем, что ваши контакты <strong>не будут переданы</strong> третьим лицам или рекламным сервисам.</li>
+            </ul>
+
+            <h3>3. ОТВЕТСТВЕННОСТЬ</h3>
+            <p>Исполнитель не несет ответственности за использование Заказчиком сгенерированного контента в целях, нарушающих законодательство страны Заказчика (включая авторские права на реальных лиц, если они были использованы без согласия в качестве референсов).</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Находим все ссылки в футере
+        const openOfferBtn = document.querySelector('a[id="openOffer"]');
+        const openTermsBtn = document.querySelector('a[id="openTerms"]');
+        
+        const modalOffer = document.getElementById('modal-offer');
+        const modalTerms = document.getElementById('modal-terms');
+        const overlays = document.querySelectorAll('.legal-overlay');
+        const closeButtons = document.querySelectorAll('.close-legal-modal');
+
+        // Функция открытия
+        function openModal(modal) {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Блокируем скролл страницы
+        }
+
+        // Функция закрытия
+        function closeModal() {
+            overlays.forEach(modal => modal.classList.remove('active'));
+            document.body.style.overflow = ''; // Возвращаем скролл
+        }
+
+        // Привязываем события к ссылкам в футере
+        if(openOfferBtn) openOfferBtn.addEventListener('click', (e) => { e.preventDefault(); openModal(modalOffer); });
+        if(openTermsBtn) openTermsBtn.addEventListener('click', (e) => { e.preventDefault(); openModal(modalTerms); });
+
+        // Закрытие по крестику
+        closeButtons.forEach(btn => btn.addEventListener('click', closeModal));
+
+        // Закрытие по клику на фон
+        overlays.forEach(overlay => {
+            overlay.addEventListener('click', function(e) {
+                if (e.target === this) closeModal();
+            });
+        });
+
+        // Закрытие по кнопке Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+    });
+</script>
+
+<!-- КОНЕЦ ЮРИДИЧЕСКОГО БЛОКА -->
+
+</body>
+</html>
