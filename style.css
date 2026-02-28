@@ -420,3 +420,86 @@ footer .socials a:hover { color: #fff; text-shadow: 0 0 10px rgba(255,255,255,0.
 .legal-links a { color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
 .legal-links a:hover { color: #fff; }
 .copyright { margin-top: 20px; font-size: 0.7rem; color: #444; text-transform: uppercase; letter-spacing: 2px; text-align: center;}
+
+/* ==========================================================================
+   ULTIMATE MOBILE FIX (АДАПТАЦИЯ ДЛЯ ТЕЛЕФОНОВ)
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* 1. Глобальные отступы и шрифты */
+    body { padding: 0 10px !important; }
+    .mt-100 { margin-top: 50px !important; }
+    .hero { padding: 40px 10px 30px !important; }
+    
+    /* Убиваем гигантские шрифты инлайн-стилей */
+    h1, .main-title, .pricing-header h1 { font-size: 2.2rem !important; line-height: 1.1 !important; margin-bottom: 20px !important; }
+    h2, .section-title, .section-title-clean, .info-title { font-size: 1.6rem !important; line-height: 1.2 !important; margin-bottom: 20px !important; }
+    h3, .service-title { font-size: 1.3rem !important; margin-bottom: 10px !important; }
+    p, .muted-text, .hero-sub, .info-text { font-size: 0.95rem !important; line-height: 1.5 !important; }
+
+    /* 2. Шапка и Навигация (делаем скролл по горизонтали, чтобы не ломало верстку) */
+    header { padding: 15px !important; flex-direction: column; gap: 15px !important; border-radius: 16px !important; }
+    .logo { font-size: 1.1rem !important; text-align: center; }
+    .main-nav { 
+        width: 100%; 
+        justify-content: flex-start !important; 
+        overflow-x: auto; /* Свайп меню пальцем */
+        padding: 5px !important; 
+        -webkit-overflow-scrolling: touch;
+    }
+    /* Прячем ползунок скролла для красоты */
+    .main-nav::-webkit-scrollbar { display: none; } 
+
+    /* 3. Кнопки (растягиваем на всю ширину для удобства нажатия) */
+    .cta-buttons { flex-direction: column; gap: 10px !important; }
+    .btn-primary, .btn-secondary, .btn-capsule, .btn-tg { 
+        width: 100% !important; 
+        text-align: center !important; 
+        padding: 15px 20px !important; 
+        font-size: 0.95rem !important;
+        box-sizing: border-box;
+    }
+
+    /* 4. Сетки, Карточки и Блоки */
+    .service-row, .service-row.reverse, .info-section { 
+        flex-direction: column !important; 
+        gap: 20px !important; 
+        margin-bottom: 50px !important; 
+    }
+    .service-text, .pack-card, .card { padding: 25px 20px !important; }
+    
+    /* Исправляем блок "Хотите внедрить это в свой бизнес?" в tech.html */
+    .info-content { padding: 30px 20px !important; text-align: center; }
+    
+    /* 5. Картинки и Видео */
+    .service-img-box, .info-img { height: auto !important; min-height: 250px !important; width: 100% !important; }
+    .service-img-box img, .service-img-box video, .info-img img { 
+        position: relative !important; 
+        height: auto !important; 
+        width: 100% !important; 
+        max-height: 350px; 
+        object-fit: cover !important; 
+    }
+
+    /* 6. Блок "Зачем платить больше" (index.html) */
+    .comp-grid { display: flex !important; flex-direction: column !important; gap: 15px !important; margin-top: 20px !important;}
+    .comp-cell { padding: 15px !important; text-align: center !important; flex-direction: column; gap: 5px; }
+    .comp-header { display: none !important; } /* Скрываем десктопную шапку таблицы */
+    .param-name { font-size: 1.1rem !important; color: #fff; margin-bottom: 5px; }
+    .old-way { font-size: 0.9rem !important; margin-bottom: 5px; }
+    .new-way { font-size: 1rem !important; }
+
+    /* 7. Юридические модалки (чтобы крестик не улетал и текст влезал) */
+    .legal-modal { width: 95% !important; padding: 0 !important; max-height: 85vh !important; }
+    .legal-header { padding: 20px !important; }
+    .legal-header h2 { font-size: 1.3rem !important; margin: 0 !important; width: 85%; }
+    .close-legal-modal, .close-legal { font-size: 35px !important; top: 10px !important; right: 15px !important; }
+    .legal-body { padding: 0 20px 20px !important; }
+
+    /* 8. Подвал */
+    footer { padding: 40px 20px !important; border-radius: 16px !important; }
+    .legal-links { flex-direction: column !important; gap: 15px !important; }
+    
+    /* 9. Фаундер блок */
+    .founder-box { padding: 30px 20px !important; }
+    .founder-img { width: 120px !important; height: 120px !important; }
+}
